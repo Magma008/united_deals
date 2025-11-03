@@ -6,7 +6,7 @@ const Header_top = () => {
       <div className="main-container">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="">Welcome to worldwide Megamart!</p>
-          <ul className="flex gap-1 sm:gap-2 items-center">
+          <ul className="flex gap-1 sm:gap-2 items-center text-[11.5px] sm:text-base">
             <li>
               <Link to="/">
                 <p className="cursor-pointer" >Deliver to 423651</p>

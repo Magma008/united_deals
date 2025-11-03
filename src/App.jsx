@@ -12,7 +12,7 @@ import SignUpPage from "./pages/signUpPage/SignUpPage"
 
 const App = () => {
   return (
-    <div>
+    <div className="relative min-h-[300vh]">
       <Header_top/>
       <Header/>
       <Header_bottom/>
