@@ -13,7 +13,7 @@ import Categories from "./pages/categories/Categories"
 
 const App = () => {
   return (
-    <div>
+    <div className="relative min-h-[300vh]">
       <Header_top/>
       <Header/>
       <Header_bottom/>
