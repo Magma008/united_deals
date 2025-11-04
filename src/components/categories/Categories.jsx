@@ -1,11 +1,10 @@
-
+import { DATA } from '../../mock/ammorxon/categories/categories'
 
 import { Link } from 'react-router-dom'
 const Categories = () => {
   return (
     
     <div style={{ margin: "50px" }}>
-        <h1>HOME</h1>
         <div style={{
               display: "flex"
         }}>  
@@ -35,7 +34,7 @@ const Categories = () => {
     gap: "40px"
 }}>
     <br />
-{/* {
+{
     DATA.map((item, index) => {
         return(
             <div key={index}>
@@ -57,7 +56,7 @@ const Categories = () => {
             </div>
         )
     })
-} */}
+}
 
 </div>
 

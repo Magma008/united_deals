@@ -4,7 +4,8 @@ import Brands from '../../components/brands/Brands'
 import Electronics from '../../components/electronics/Electronics'
 import Frequently from '../../components/frequently/Frequently'
 import Sale from '../../components/sale/Sale'
-import Categories from '../../components/categories/Categories'
+import Categories from "../../components/categories/Categories"
+
 
 
 const Home = () => {
