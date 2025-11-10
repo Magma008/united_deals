@@ -9,7 +9,6 @@ import { useState } from "react"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(true)
   return (
-    <div>
     <div className="sticky top-0 left-0 z-20 bg-white/50 backdrop-blur-[6px] items-center">
       <div className="main-container">
         <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5 sm:justify-between h-min ">

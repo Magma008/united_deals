@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 
 const Header_top = () => {
   return (
-    <div>
     <div className="bg-black text-white py-2 text-[14px]">
       <div className="main-container">
         <div className="flex flex-col sm:flex-row justify-between items-center">
