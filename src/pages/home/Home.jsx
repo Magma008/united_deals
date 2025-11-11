@@ -9,13 +9,13 @@ import Sale from '../../components/sale/Sale'
 const Home = () => {
   return (
     <div>
-      <Carousel/>
-      <Hero_items/>
-      <Brands/>
-      <Sale/>
-      <Categories/>
-      <Electronics/>
-      <Frequently/>
+      <Carousel />
+      <Hero_items />
+      <Brands />
+      <Sale />
+      <Categories />
+      <Electronics />
+      <Frequently />
     </div>
   )
 }

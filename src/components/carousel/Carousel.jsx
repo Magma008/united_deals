@@ -14,6 +14,7 @@ import { BRAND } from '../../mock/carousel';
 
 function Carousel() {
   return (
+<<<<<<< HEAD
     <div>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
@@ -56,6 +57,10 @@ function Carousel() {
         <h3 className='heading-first'>{item.title}</h3>
       <p className='paragraph-first'>{item.text}</p>
       </div>
+=======
+      <div>
+      
+>>>>>>> b54d38b9b437864b17743b483435f8772530c3ce
     </div>
   ))}
 </div>
