@@ -24,7 +24,7 @@ const SideMenu = ({ open, setOpen }) => {
 
                     <div className="flex flex-col w-max p-2.5 rounded-md bg-white/50 h-full">
                         <h3 className="uppercase">Featured Phones</h3>
-                        <ul className='flex flex-col gap-2'>
+                        <ul className='flex flex-col gap-2 text-black'>
                             <Link>
                                 <li className='flex items-center gap-4 p-2 border rounded-md bg-white'>
                                     <img src={ps5} alt="ps5" />

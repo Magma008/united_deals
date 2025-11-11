@@ -7,7 +7,7 @@ import SideMenu from '../sideMenu/SideMenu';
 const DropDown = ({ opened }) => {
     const [open, setOpen] = useState(false)
     return (
-        <div className={`absolute transition-all  hidden sm:flex duration-400 ${!opened && "translate-y-[-800px]"} left-[30px]`}>
+        <div className={`absolute transition-all z-[100000]  hidden sm:flex duration-400 ${!opened && "translate-y-[-800px]"} left-[30px]`}>
             <ul className='flex flex-col text-[13px] md:text-base bg-black/20 backdrop-blur-xs w-fit p-2 md:p-4 rounded-md'>
                 {
                     dropLinks.map((item, i) => (

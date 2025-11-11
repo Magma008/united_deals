@@ -13,7 +13,7 @@ import SideMenu from '../sideMenu/SideMenu';
 
 
 const Header_bottom = () => {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(true)
   return (
     <div className='bg-blue-400'>
       <div div className="main-container" >

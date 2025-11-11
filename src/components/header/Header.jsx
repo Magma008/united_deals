@@ -5,6 +5,7 @@ import { FaRegHandshake } from "react-icons/fa6"
 import { IoIosContact } from "react-icons/io"
 import { IoCartOutline } from "react-icons/io5"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -16,7 +17,9 @@ const Header = () => {
           <div className="flex justify-between w-full sm:w-auto items-center gap-4">
             <img className={`cursor-pointer transition-all duration-300 ${isOpen && "rotate-90"} w-[35px] h-[35px] sm:hidden`} onClick={() => setIsOpen(!isOpen)} src={toggleImg} alt="Toggle" />
             <img className="cursor-pointer hidden sm:block w-[35px] h-[35px] md:w-auto md:h-auto" src={toggleImg} alt="Toggle" />
-            <h1 className="text-xl lg:text-2xl xl:text-3xl font-extrabold leading-4">UNITED DEALS</h1>
+            <Link to="/" >
+              <h1 className="text-xl lg:text-2xl xl:text-3xl font-extrabold leading-4 text-black">UNITED DEALS</h1>
+            </Link>
             <img className="lg:w-[90px] lg:h-[90px] w-[65px] h-[65px]" src={flash} alt="flash" />
           </div>
 
@@ -30,13 +33,13 @@ const Header = () => {
               <FaRegHandshake />
               <p className="hidden lg:block">My Deals</p>
             </div>
-            <p className="px-1.5 lg:px-2 xl:px-4">|</p>
-            <div className="flex items-center gap-1 cursor-pointer">
+            <p className="px-1.5 lg:px-2 xl:px-4 text-black">|</p>
+            <div className="flex items-center gap-1 cursor-pointer text-black text-black">
               <IoIosContact />
               <p className="hidden lg:block">Sign In/Sign Up</p>
             </div>
-            <p className="px-1.5 lg:px-2 xl:px-4">|</p>
-            <div className="flex items-center gap-1 cursor-pointer">
+            <p className="px-1.5 lg:px-2 xl:px-4 text-black">|</p>
+            <div className="flex items-center gap-1 cursor-pointer text-black">
               <IoCartOutline />
               <p className="hidden lg:block">Cart</p>
             </div>
@@ -50,17 +53,17 @@ const Header = () => {
                   <FaRegHandshake className="w-[18px] h-[18px]" />
                   <p className="">My Deals</p>
                 </div>
-                <div className="flex items-center gap-1 cursor-pointer">
+                <div className="flex items-center gap-1 cursor-pointer text-black">
                   <IoIosContact className="w-[18px] h-[18px]" />
                   <p className="">Sign In/Sign Up</p>
                 </div>
-                <div className="flex items-center gap-1 cursor-pointer">
+                <div className="flex items-center gap-1 cursor-pointer text-black">
                   <IoCartOutline className="w-[18px] h-[18px]" />
                   <p className="">Cart</p>
                 </div>
               </div>
 
-              <div className="p-1 gap-1.5 items-center rounded-md bg-sky-200 flex">
+              <div className="p-1 gap-1.5 items-center rounded-md bg-sky-200 flex text-black">
                 <FiSearch />
                 <input id="formSmall" className="w-full text-[14px] placeholder:text-[14px] outline-0" type="text" placeholder="Search essentials, groceries and more..." />
               </div>
