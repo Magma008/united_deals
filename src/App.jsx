@@ -24,9 +24,7 @@ const App = () => {
         <Route path="/zara/:id" element={<Zara />} />
         <Route path="/signUp" element={<SignUpPage />} />
       </Routes>
-      <Footer />
+      <Footer/>
     </div>
-  );
-};
-
+  )}
 export default App;
