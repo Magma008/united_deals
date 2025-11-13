@@ -1,24 +1,35 @@
 import { useState } from "react";
 import star from "../../assets/star.png";
 import { data } from "../../mock/behruz/sale/Sale";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { MdLocalOffer } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import Pay from "../../assets/payment.svg";
-import { Link } from "react-router-dom";
 import { Alldata } from "../../mock/behruz/View";
 
 const SinglePage = () => {
   const [count, setCount] = useState(0);
   const { id } = useParams();
-  const item = data.find((item) => item.id === id);
-  if (!item) return <p>No product found</p>;
+
+  const item = data.find((item) => (item.id) === (id));
+
+  if (!item) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center text-2xl text-gray-600">
+        Product not found 
+      </div>
+    );
+  }
 
   return (
     <section className="w-[1202px] mx-auto my-[119px]">
-      <div className="flex gap-[60px]">
+      <div className="flex flex-wrap lg:flex-nowrap gap-[60px]">
         <div className="img w-[561px] h-[531px] border-2 rounded border-[#E4E7E9] flex items-center justify-center">
-          <img src={item.thumbnail} alt="image" className="w-[300px] h-[400px]" />
+          <img
+            src={item.thumbnail}
+            alt="product"
+            className="w-[300px] h-[400px] object-contain"
+          />
         </div>
 
         <div className="text w-[591px]">
@@ -31,7 +42,7 @@ const SinglePage = () => {
           <div className="flex flex-col gap-3 w-[590px]">
             <p className="text-[32px] text-[#191C1F] font-bold">{item.title}</p>
 
-            <div className="information flex items-center gap-5">
+            <div className="information flex items-center gap-5 flex-wrap">
               <div className="info flex flex-col gap-1">
                 <span className="w-[284px] text-[18px] text-[#5F6C72]">
                   Sku: <span className="text-[#000000] font-bold">{item.number}</span>
@@ -57,14 +68,18 @@ const SinglePage = () => {
           </div>
 
           <div className="center_bottom">
-            <div className="rs mt-5 flex items-center gap-1">
-              <span className="text-[#2EB100] text-[32px] font-extrabold">Rs 125000</span>
-              <span className="font-normal text-[22px] text-[#77878F]">₹156000</span>
+            <div className="rs mt-5 flex items-center gap-2 flex-wrap">
+              <span className="text-[#2EB100] text-[32px] font-extrabold">
+                Rs 125000
+              </span>
+              <span className="font-normal text-[22px] text-[#77878F] line-through">
+                ₹156000
+              </span>
               <button className="w-[70px] h-8 bg-[#EFD33D] text-[#191C1F] font-semibold ml-3 rounded">
                 21% OFF
               </button>
             </div>
-            <p className="text-[#9A9A9A] text-[17px]">or</p>
+            <p className="text-[#9A9A9A] text-[17px] mt-2">or</p>
             <div className="get">
               <p className="text-[22px] font-bold text-[#191C1F]">
                 Get it for <span className="text-[#2EB100]">Rs 90,0000</span>
@@ -74,8 +89,8 @@ const SinglePage = () => {
 
           <hr className="text-[#E4E7E9] mt-5" />
 
-          <div className="input w-[590px] h-[147px] mt-2.5 flex gap-6">
-            <div className="patr1">
+          <div className="input w-[590px] mt-2.5 gap-6 flex">
+            <div className="part1">
               <span className="font-bold text-[18px] text-[#191C1F]">Color</span>
               <div className="colors flex items-center gap-5 mt-3">
                 <div className="w-8 h-8 rounded-full bg-[#C5C5C5]"></div>
@@ -92,7 +107,7 @@ const SinglePage = () => {
               </select>
             </div>
 
-            <div className="patr2">
+            <div className="part2">
               <span className="font-bold text-[18px] text-[#191C1F] flex flex-col">
                 Size
               </span>
@@ -106,21 +121,21 @@ const SinglePage = () => {
                 Storage
               </span>
               <select className="w-[284px] h-10 border-2 border-[#E4E7E9]">
-                <option>1TV SSD Storage</option>
-                <option>2TV SSD Storage</option>
-                <option>3TV SSD Storage</option>
+                <option>1TB SSD Storage</option>
+                <option>2TB SSD Storage</option>
+                <option>3TB SSD Storage</option>
               </select>
             </div>
           </div>
 
-          <div className="count flex items-center mt-9 gap-4">
+          <div className="count flex items-center mt-9 gap-4 flex-wrap">
             <div className="w-[150px] rounded-[33px] border-2 border-[#E4E7E9] flex items-center justify-around text-[29px]">
               <button onClick={() => setCount(count > 0 ? count - 1 : 0)}>-</button>
-              <button>{count}</button>
+              <span>{count}</span>
               <button onClick={() => setCount(count + 1)}>+</button>
             </div>
 
-            <button className="flex items-center w-[282px] bg-[#313131] text-[#FFFFFF] rounded-[33px] justify-center text-[18px] font-semibold">
+            <button className="flex items-center w-[282px] bg-[#313131] text-[#FFFFFF] rounded-[33px] justify-center text-[18px] font-semibold gap-2">
               <MdLocalOffer />
               Get DEAL ( ₹90k )
             </button>
@@ -149,7 +164,7 @@ const SinglePage = () => {
           </button>
         </div>
 
-      <div className="w-[1340px] grid grid-cols-4  gap-9 ml-[-30px]">
+        <div className="w-[1340px] grid grid-cols-4  gap-9 ml-[-30px]">
           {Alldata.map((item) => (
             <div key={item.id} className="card w-[318px] h-[468px]">
               <Link to={`/singlePage/${item.id}`}>
@@ -159,8 +174,8 @@ const SinglePage = () => {
                 <p className="w-[318px] h-14 text-[23px] text-[#232321] font-bold">
                   {item.text}
                 </p>
-                
-                <button className="w-[318px] h-12 text-[white] bg-[black] rounded-2xl mt-[22px]">
+
+                <button className="w-[318px] h-12 text-white bg-black rounded-2xl mt-[22px]">
                   BUY NOW - <span className="text-[#FCBD01]"> ₹125</span>
                 </button>
               </Link>
