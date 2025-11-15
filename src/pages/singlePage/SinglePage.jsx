@@ -1,11 +1,13 @@
 import { useState } from "react";
-import star from "../../assets/star.png";
+import star from "../../assets/Star.svg";
 import { data } from "../../mock/behruz/sale/Sale";
 import { useParams, Link } from "react-router-dom";
 import { MdLocalOffer } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import Pay from "../../assets/payment.svg";
 import { Alldata } from "../../mock/behruz/View";
+import { IoHomeOutline } from "react-icons/io5";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const SinglePage = () => {
   const [count, setCount] = useState(0);
@@ -22,20 +24,38 @@ const SinglePage = () => {
   }
 
   return (
-    <section className="w-[1202px] mx-20">
-      <div className="flex gap-[60px]">
+    <section className="w-full ">
+      <header className="w-full h-[54.07px] bg-[#F2F4F5] text-[#5F6C72]">
+        <ul className="w-[607px] flex items-center gap-2.5 text-[15px] mx-20 py-4">
+          <li className="flex items-center gap-2">
+            <IoHomeOutline className="text-[16px]"/>
+            HOME <MdOutlineKeyboardArrowRight className="text-[19px]"/>
+          </li>
+          <li className="flex items-center" >
+            Shop <MdOutlineKeyboardArrowRight className="text-[19px]"/>
+          </li>
+          <li className="flex items-center">
+            Shop Grid <MdOutlineKeyboardArrowRight className="text-[19px]"/>
+          </li>
+          <li className="flex items-center">
+            Electronics Devices <MdOutlineKeyboardArrowRight className="text-[19px]" />
+          </li>
+          <li className="text-[#2DA5F3]">Mackbook Pro</li>
+        </ul>
+      </header>
+      <div className="flex gap-[60px] mx-20">
         <div className="w-[561px] h-[531px] border-2 rounded border-[#E4E7E9] flex items-center justify-center mt-4.5">
           <img
             src={item.thumbnail}
             alt="product"
-            className="w-[300px] h-[400px]"
+            className="w-[300px] h-[400px] object-contain"
           />
         </div>
 
         <div className="w-[591px] h-[600px] mt-4.5">
-          <div className="top flex items-center gap-1.5">
+          <div className="top flex items-center gap-2.5">
             <img src={star} alt="rating" />
-            <span className="font-semibold text-[15.75px]">
+            <span className="font-semibold text-[15.75px] text-[black]">
               4.7 Star Rating
             </span>
             <span className="text-[#5F6C72]">(21,671 User feedback)</span>
@@ -138,11 +158,19 @@ const SinglePage = () => {
 
           <div className="count flex items-center mt-9 gap-4 flex-wrap">
             <div className="w-[150px] rounded-[33px] border-2 border-[#E4E7E9] flex items-center justify-around text-[29px]">
-              <button onClick={() => setCount(count > 0 ? count - 1 : 0)} className="text-[black]">
+              <button
+                onClick={() => setCount(count > 0 ? count - 1 : 0)}
+                className="text-[black]"
+              >
                 -
               </button>
               <span className="text-[black]">{count}</span>
-              <button onClick={() => setCount(count + 1)} className="text-[black]">+</button>
+              <button
+                onClick={() => setCount(count + 1)}
+                className="text-[black]"
+              >
+                +
+              </button>
             </div>
 
             <button className="flex items-center w-[282px] bg-[#313131] text-[#FFFFFF] rounded-[33px] justify-center text-[18px] font-semibold gap-2">
@@ -159,12 +187,12 @@ const SinglePage = () => {
             <span className="font-medium text-[16px] text-[black]">
               100% Guarantee Safe Checkout
             </span>
-            <img src={Pay} alt="cards" className="mt-2"/>
+            <img src={Pay} alt="cards" className="mt-2" />
           </div>
         </div>
       </div>
-
-      <div className="cardlar mt-[200px]">
+      {/* text qismi  */}
+      <div className="cardlar mt-[200px] mx-20">
         <div className="w-[1365px] flex justify-between items-center mb-6">
           <h1 className="text-[40px] font-semibold capitalize text-[black]">
             Frequently bought together
@@ -184,6 +212,10 @@ const SinglePage = () => {
                 <p className="w-[318px] h-14 text-[23px] text-[#232321] font-bold">
                   {item.text}
                 </p>
+                <div className="rating flex mt-4 gap-2">
+                  <img src={star} alt=""  />
+                <span className="text-[#5F6C72]">{item.rating}</span>
+                </div>
                 <button className="w-[318px] h-12 text-white bg-black rounded-2xl mt-[22px]">
                   BUY NOW - <span className="text-[#FCBD01]"> ₹125</span>
                 </button>
